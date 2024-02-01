@@ -1,0 +1,19 @@
+{
+    "name": "authify",
+    "version": "1.0.0",
+    "description": "Authify é um sistema de autenticação e autorização seguro e escalável, projetado para aplicativos Web modernos. Utilizando JSON Web Tokens (JWT), o Authify oferece uma solução robusta para gerenciar a autenticação de usuários, a autorização de acesso e a proteção de rotas sensíveis.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alvaroeduardo/Authify.git"
+    },
+    "author": "Álvaro Eduardo Silva",
+    "license": "CC BY-NC-ND 1.0",
+    "bugs": {
+        "url": "https://github.com/alvaroeduardo/Authify/issues"
+    },
+    "homepage": "https://github.com/alvaroeduardo/Authify#readme"
+}
