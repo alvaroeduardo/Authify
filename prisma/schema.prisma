@@ -13,7 +13,13 @@ datasource db {
 model User {
     id             String  @id @default(uuid())
     name           String
-    email          String
+    email          String  @unique
     password       String
     confirmedEmail Boolean @default(false)
+}
+
+model BlackListToken {
+    id        String   @id @default(uuid())
+    token     String
+    createdAt DateTime @default(now())
 }
