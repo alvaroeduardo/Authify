@@ -23,3 +23,10 @@ model BlackListToken {
     token     String
     createdAt DateTime @default(now())
 }
+
+model Log {
+    id        String   @id @default(uuid())
+    ip        String
+    action    String
+    createdAt DateTime @default(now())
+}

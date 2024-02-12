@@ -4,9 +4,12 @@ import { z } from "zod";
 import { comparePassword, encryptPassword } from "../utils/crypto";
 import * as jwt from "jsonwebtoken";
 import { transporter } from "../utils/mail";
-import { verifyJWT } from "../utils/jwt";
+import { verifyJWTResetPassword } from "../utils/jwt";
+import { logsMiddleware } from "../middlewares/log";
 
 export async function authentication(app: FastifyInstance) {
+    app.addHook('preHandler', logsMiddleware);
+    
     app.post('/register', async (req, res) => {
         const bodySchema = z.object({
             name: z.string(),
@@ -181,7 +184,7 @@ export async function authentication(app: FastifyInstance) {
             message: "Token already used."
         });
 
-        const decodedToken = verifyJWT(token);
+        const decodedToken = verifyJWTResetPassword(token);
 
         if (!decodedToken || !decodedToken.email) return res.code(401).send({
             message: "Invalid token."
